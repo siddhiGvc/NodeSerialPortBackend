@@ -55,7 +55,7 @@ SerialPort.list().then(ports => {
    // console.log(port);
    // console.log(typeof(port));
     parser = port.pipe(new ReadlineParser({ delimiter: '\r\n' }))
-    parser.on('data', data => {
+    parser.on('data', async(data)=> {
     
    
         if (data.includes('*') && data.includes('#')) {
@@ -66,44 +66,44 @@ SerialPort.list().then(ports => {
           if(dataArray[1] =='1')
           {
             console.log("Play Video 1");
-            serials.create({
-                  value1:dataArray[1],
-              })
+            const data=serials.findOne({where:{id:1}});
+            data.value1=dataArray[1]
+            await data.save();
           }
           else  if(dataArray[1] =='2')
           {
             console.log("Play Video 2");
-            serials.create({
-              value1:dataArray[1],
-            })
+            const data=serials.findOne({where:{id:1}});
+            data.value1=dataArray[1]
+            await data.save();
           }
           else  if(dataArray[1] =='3')
           {
             console.log("Play Video 3");
-            serials.create({
-              value1:dataArray[1],
-            })
+            const data=serials.findOne({where:{id:1}});
+            data.value1=dataArray[1]
+            await data.save();
           }
           else  if(dataArray[1] =='4')
           {
             console.log("Play Video 4");
-            serials.create({
-              value1:dataArray[1],
-            })
+            const data=serials.findOne({where:{id:1}});
+            data.value1=dataArray[1]
+            await data.save();
           }
           else  if(dataArray[1] =='5')
           {
             console.log("Play Video 5");
-            serials.create({
-              value1:dataArray[1],
-            })
+            const data=serials.findOne({where:{id:1}});
+            data.value1=dataArray[1]
+            await data.save();
           }
           else  if(dataArray[1] =='6')
           {
             console.log("Play Video 6");
-            serials.create({
-              value1:dataArray[1],
-            })
+            const data=serials.findOne({where:{id:1}});
+            data.value1=dataArray[1]
+            await data.save();
           }
 
 
