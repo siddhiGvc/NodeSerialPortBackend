@@ -26,6 +26,7 @@ var temp;
 var StartCapture;
 const serialPorts=[];
 // List serial ports
+
 SerialPort.list().then(ports => {
   const sp=fs.readFileSync("serialport.txt");
   console.log(sp.toString());
@@ -79,6 +80,7 @@ SerialPort.list().then(ports => {
 }).catch(err => {
   console.error('Error listing serial ports:', err);
 });
+
 
 
 //   let count=Min;
