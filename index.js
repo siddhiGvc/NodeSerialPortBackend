@@ -28,23 +28,24 @@ const serialPorts=[];
 // List serial ports
 
 SerialPort.list().then(ports => {
-  const sp=fs.readFileSync("serialport.txt");
-  console.log(sp.toString());
+ 
 
-  const data=sp.toString().split(',');
-  serials.create({
-    value1:data[0],
-    value2:data[1],
-    value3:data[2],
-    value4:data[3],
-    value5:data[4],
-    value6:data[5]
-  })
+  // const data=sp.toString().split(',');
+  // serials.create({
+  //   value1:data[0],
+  //   value2:data[1],
+  //   value3:data[2],
+  //   value4:data[3],
+  //   value5:data[4],
+  //   value6:data[5]
+  // })
    
   ports.forEach(portInfo => {
     //console.log(portInfo);
     if (portInfo.manufacturer.includes("FTDI"))
     {
+      if(portInfo.path == 'COM5')
+      {
     console.log('Port path:', portInfo.path); // Log the path of each serial port
     port = new SerialPort({
       path:portInfo.path,
@@ -62,11 +63,56 @@ SerialPort.list().then(ports => {
           const Data= data.toString();
           const dataArray= Data.split("main:");
           console.log(dataArray[1]);
-          fs.appendFileSync(`serial_${portInfo.path}.txt`, dataArray[1]+ '\n');
+          if(dataArray[1] =='1')
+          {
+            console.log("Play Video 1");
+            serials.create({
+                  value1:dataArray[1],
+              })
+          }
+          else  if(dataArray[1] =='2')
+          {
+            console.log("Play Video 2");
+            serials.create({
+              value1:dataArray[1],
+            })
+          }
+          else  if(dataArray[1] =='3')
+          {
+            console.log("Play Video 3");
+            serials.create({
+              value1:dataArray[1],
+            })
+          }
+          else  if(dataArray[1] =='4')
+          {
+            console.log("Play Video 4");
+            serials.create({
+              value1:dataArray[1],
+            })
+          }
+          else  if(dataArray[1] =='5')
+          {
+            console.log("Play Video 5");
+            serials.create({
+              value1:dataArray[1],
+            })
+          }
+          else  if(dataArray[1] =='6')
+          {
+            console.log("Play Video 6");
+            serials.create({
+              value1:dataArray[1],
+            })
+          }
+
+
+          // fs.appendFileSync(`serial_${portInfo.path}.txt`, dataArray[1]+ '\n');
         }
     });
+    }
   }
-
+ 
   // Listen for data
     
     // Handle errors
