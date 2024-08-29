@@ -44,7 +44,7 @@ SerialPort.list().then(ports => {
     //console.log(portInfo);
     if (portInfo.manufacturer.includes("FTDI"))
     {
-      if(portInfo.path == 'COM5')
+      if ( (portInfo.path.includes("ttyUSB")) || (portInfo.path.includes("ttyUSB") ) )
       {
     console.log('Port path:', portInfo.path); // Log the path of each serial port
     port = new SerialPort({
