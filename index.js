@@ -57,52 +57,65 @@ SerialPort.list().then(ports => {
     parser = port.pipe(new ReadlineParser({ delimiter: '\r\n' }))
     parser.on('data', async(data)=> {
     
-   
+        console.log(data);
         if (data.includes('*') && data.includes('#')) {
 
+          
           const Data= data.toString();
-          const dataArray= Data.split("main:");
-          console.log(dataArray[1]);
-          if(dataArray[1] =='1')
+          
+          const dataArray= Data.split("*");
+          const dataArray1=dataArray[1].split(',');
+          console.log(dataArray1[0]);
+          if(dataArray1[0] =="1")
           {
             console.log("Play Video 1");
-            const data=serials.findOne({where:{id:1}});
-            data.value1=dataArray[1]
+            const data=await serials.findOne({where:{id:1}});
+          
+            data.value1=dataArray1[0]
             await data.save();
           }
-          else  if(dataArray[1] =='2')
+          else  if(dataArray1[0] =='2')
           {
             console.log("Play Video 2");
-            const data=serials.findOne({where:{id:1}});
-            data.value1=dataArray[1]
+            const data=await serials.findOne({where:{id:1}});
+          
+            data.value1=dataArray1[0]
             await data.save();
           }
-          else  if(dataArray[1] =='3')
+          else  if(dataArray1[0] =='3')
           {
             console.log("Play Video 3");
-            const data=serials.findOne({where:{id:1}});
-            data.value1=dataArray[1]
+           
+            const data=await serials.findOne({where:{id:1}});
+          
+            data.value1=dataArray1[0]
             await data.save();
           }
-          else  if(dataArray[1] =='4')
+          else  if(dataArray1[0] =='4')
           {
             console.log("Play Video 4");
-            const data=serials.findOne({where:{id:1}});
-            data.value1=dataArray[1]
+           
+            const data=await serials.findOne({where:{id:1}});
+          
+            data.value1=dataArray1[0]
             await data.save();
           }
-          else  if(dataArray[1] =='5')
+          else  if(dataArray1[0] =='5')
           {
             console.log("Play Video 5");
-            const data=serials.findOne({where:{id:1}});
-            data.value1=dataArray[1]
+           
+            const data=await serials.findOne({where:{id:1}});
+          
+            data.value1=dataArray1[0]
             await data.save();
           }
-          else  if(dataArray[1] =='6')
+          else  if(dataArray1[0] =='6')
           {
             console.log("Play Video 6");
-            const data=serials.findOne({where:{id:1}});
-            data.value1=dataArray[1]
+           
+            const data=await serials.findOne({where:{id:1}});
+          
+            data.value1=dataArray1[0]
             await data.save();
           }
 
