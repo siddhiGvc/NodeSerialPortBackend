@@ -59,11 +59,14 @@ SerialPort.list().then(ports => {
         console.log("Data Received :",data);
         if (data.includes('*') && data.includes('#')) {
 
-          
+
           const Data= data.toString();
+          const data1=Data.replace('*','');
+          const data2=data1.replace('#',',');
+
           
-          const dataArray= Data.split("*");
-          const dataArray1=dataArray[1].split(',');
+          
+          const dataArray1= data2.split(",");
           console.log(dataArray1[0],dataArray1[3]);
           if(dataArray1[0] =="1")
           {
