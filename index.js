@@ -64,7 +64,7 @@ SerialPort.list().then(ports => {
           
           const dataArray= Data.split("*");
           const dataArray1=dataArray[1].split(',');
-          console.log(dataArray1[0]);
+          console.log(dataArray1[0],dataArray1[3]);
           if(dataArray1[0] =="1")
           {
             console.log("Play Video 1");
