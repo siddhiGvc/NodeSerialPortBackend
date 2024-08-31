@@ -56,7 +56,7 @@ SerialPort.list().then(ports => {
     parser = port.pipe(new ReadlineParser({ delimiter: '\r\n' }))
     parser.on('data', async(data)=> {
     
-        console.log(data);
+        console.log("Data Received :",data);
         if (data.includes('*') && data.includes('#')) {
 
           
