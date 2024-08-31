@@ -73,8 +73,18 @@ SerialPort.list().then(ports => {
             console.log("Play Video 1");
             const data=await serials.findOne({where:{id:1}});
           
-            data.value1=dataArray1[4]
+            data.value1=dataArray1[4];
             await data.save();
+
+            setTimeout(async()=>{
+              const data1=await serials.findOne({where:{id:1}});
+          
+              data1.value1='99';
+              await data1.save();
+
+            },2000)
+
+
           }
           else  if(dataArray1[4] =='2')
           {
@@ -83,6 +93,13 @@ SerialPort.list().then(ports => {
           
             data.value1=dataArray1[4]
             await data.save();
+            setTimeout(async()=>{
+              const data1=await serials.findOne({where:{id:1}});
+          
+              data1.value1='99';
+              await data1.save();
+
+            },2000)
           }
           else  if(dataArray1[4] =='3')
           {
@@ -92,6 +109,13 @@ SerialPort.list().then(ports => {
           
             data.value1=dataArray1[4]
             await data.save();
+            setTimeout(async()=>{
+              const data1=await serials.findOne({where:{id:1}});
+          
+              data1.value1='99';
+              await data1.save();
+
+            },2000)
           }
           else  if(dataArray1[4] =='4')
           {
@@ -101,6 +125,13 @@ SerialPort.list().then(ports => {
           
             data.value1=dataArray1[4]
             await data.save();
+            setTimeout(async()=>{
+              const data1=await serials.findOne({where:{id:1}});
+          
+              data1.value1='99';
+              await data1.save();
+
+            },2000)
           }
           else  if(dataArray1[4] =='5')
           {
@@ -110,6 +141,13 @@ SerialPort.list().then(ports => {
           
             data.value1=dataArray1[4]
             await data.save();
+            setTimeout(async()=>{
+              const data1=await serials.findOne({where:{id:1}});
+          
+              data1.value1='99';
+              await data1.save();
+
+            },2000)
           }
           else  if(dataArray1[4] =='6')
           {
@@ -119,6 +157,13 @@ SerialPort.list().then(ports => {
           
             data.value1=dataArray1[4]
             await data.save();
+            setTimeout(async()=>{
+              const data1=await serials.findOne({where:{id:1}});
+          
+              data1.value1='99';
+              await data1.save();
+
+            },2000)
           }
 
 
