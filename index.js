@@ -42,8 +42,7 @@ SerialPort.list().then(ports => {
    
   ports.forEach(portInfo => {
     //console.log(portInfo);
-    if (portInfo.manufacturer.includes("FTDI"))
-    {
+  
       if ( (portInfo.path.includes("ttyUSB")) || (portInfo.path.includes("ttyUSB") ) )
       {
     console.log('Port path:', portInfo.path); // Log the path of each serial port
@@ -123,7 +122,7 @@ SerialPort.list().then(ports => {
           // fs.appendFileSync(`serial_${portInfo.path}.txt`, dataArray[1]+ '\n');
         }
     });
-    }
+    
   }
  
   // Listen for data
