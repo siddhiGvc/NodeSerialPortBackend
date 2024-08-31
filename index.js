@@ -67,57 +67,57 @@ SerialPort.list().then(ports => {
           
           
           const dataArray1= data2.split(",");
-          console.log(dataArray1[0],dataArray1[3]);
-          if(dataArray1[0] =="1")
+          console.log(dataArray1[0],dataArray1[4]);
+          if(dataArray1[4] =="1")
           {
             console.log("Play Video 1");
             const data=await serials.findOne({where:{id:1}});
           
-            data.value1=dataArray1[0]
+            data.value1=dataArray1[4]
             await data.save();
           }
-          else  if(dataArray1[0] =='2')
+          else  if(dataArray1[4] =='2')
           {
             console.log("Play Video 2");
             const data=await serials.findOne({where:{id:1}});
           
-            data.value1=dataArray1[0]
+            data.value1=dataArray1[4]
             await data.save();
           }
-          else  if(dataArray1[0] =='3')
+          else  if(dataArray1[4] =='3')
           {
             console.log("Play Video 3");
            
             const data=await serials.findOne({where:{id:1}});
           
-            data.value1=dataArray1[0]
+            data.value1=dataArray1[4]
             await data.save();
           }
-          else  if(dataArray1[0] =='4')
+          else  if(dataArray1[4] =='4')
           {
             console.log("Play Video 4");
            
             const data=await serials.findOne({where:{id:1}});
           
-            data.value1=dataArray1[0]
+            data.value1=dataArray1[4]
             await data.save();
           }
-          else  if(dataArray1[0] =='5')
+          else  if(dataArray1[4] =='5')
           {
             console.log("Play Video 5");
            
             const data=await serials.findOne({where:{id:1}});
           
-            data.value1=dataArray1[0]
+            data.value1=dataArray1[4]
             await data.save();
           }
-          else  if(dataArray1[0] =='6')
+          else  if(dataArray1[4] =='6')
           {
             console.log("Play Video 6");
            
             const data=await serials.findOne({where:{id:1}});
           
-            data.value1=dataArray1[0]
+            data.value1=dataArray1[4]
             await data.save();
           }
 
