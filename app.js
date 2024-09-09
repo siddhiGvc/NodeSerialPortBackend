@@ -2,6 +2,7 @@ var express = require('express');
 require('dotenv').config();
 var db=require('./models/index');
 var path = require('path');
+const router=require('./routes/serialPort.js')
 // var https = require('https');
 require ('./database.js');
 require ('./index.js');
@@ -29,7 +30,7 @@ app.use(express.static(path.join(__dirname, 'public')));
   })();
  
 
- 
+  app.use('/SerialPort', router);
   app.get('/', (req, res) => res.send('Ok'));
  
 
