@@ -72,7 +72,20 @@ SerialPort.list().then(ports => {
           {
             console.log("Play Video 1");
             const data=await serials.findOne({where:{id:1}});
-          
+            if(!data)
+            {
+              await serials.create({
+                value1:dataArray1[4]
+              })
+              setTimeout(async()=>{
+                const data1=await serials.findOne({where:{id:1}});
+            
+                data1.value1='99';
+                await data1.save();
+  
+              },2000)
+            }
+            else{
             data.value1=dataArray1[4];
             await data.save();
 
@@ -83,6 +96,7 @@ SerialPort.list().then(ports => {
               await data1.save();
 
             },2000)
+          }
 
 
           }
@@ -90,7 +104,20 @@ SerialPort.list().then(ports => {
           {
             console.log("Play Video 2");
             const data=await serials.findOne({where:{id:1}});
-          
+            if(!data)
+              {
+                await serials.create({
+                  value1:dataArray1[4]
+                })
+                setTimeout(async()=>{
+                  const data1=await serials.findOne({where:{id:1}});
+              
+                  data1.value1='99';
+                  await data1.save();
+    
+                },2000)
+              }
+              else{
             data.value1=dataArray1[4]
             await data.save();
             setTimeout(async()=>{
@@ -100,13 +127,27 @@ SerialPort.list().then(ports => {
               await data1.save();
 
             },2000)
+              }
           }
           else  if(dataArray1[4] =='3')
           {
             console.log("Play Video 3");
            
             const data=await serials.findOne({where:{id:1}});
-          
+            if(!data)
+              {
+                await serials.create({
+                  value1:dataArray1[4]
+                })
+                setTimeout(async()=>{
+                  const data1=await serials.findOne({where:{id:1}});
+              
+                  data1.value1='99';
+                  await data1.save();
+    
+                },2000)
+              }
+              else{
             data.value1=dataArray1[4]
             await data.save();
             setTimeout(async()=>{
@@ -116,13 +157,27 @@ SerialPort.list().then(ports => {
               await data1.save();
 
             },2000)
+             }
           }
           else  if(dataArray1[4] =='4')
           {
             console.log("Play Video 4");
            
             const data=await serials.findOne({where:{id:1}});
-          
+            if(!data)
+              {
+                await serials.create({
+                  value1:dataArray1[4]
+                })
+                setTimeout(async()=>{
+                  const data1=await serials.findOne({where:{id:1}});
+              
+                  data1.value1='99';
+                  await data1.save();
+    
+                },2000)
+              }
+              else{
             data.value1=dataArray1[4]
             await data.save();
             setTimeout(async()=>{
@@ -132,12 +187,57 @@ SerialPort.list().then(ports => {
               await data1.save();
 
             },2000)
+            }
           }
           else  if(dataArray1[4] =='5')
           {
             console.log("Play Video 5");
            
             const data=await serials.findOne({where:{id:1}});
+            if(!data)
+              {
+                await serials.create({
+                  value1:dataArray1[4]
+                })
+                setTimeout(async()=>{
+                  const data1=await serials.findOne({where:{id:1}});
+              
+                  data1.value1='99';
+                  await data1.save();
+    
+                },2000)
+              }
+             else{
+            data.value1=dataArray1[4]
+            await data.save();
+            setTimeout(async()=>{
+              const data1=await serials.findOne({where:{id:1}});
+          
+              data1.value1='99';
+              await data1.save();
+
+            },2000)
+          }
+          }
+          else  if(dataArray1[4] =='6')
+          {
+            console.log("Play Video 6");
+           
+            const data=await serials.findOne({where:{id:1}});
+            if(!data)
+              {
+                await serials.create({
+                  value1:dataArray1[4]
+                })
+                setTimeout(async()=>{
+                  const data1=await serials.findOne({where:{id:1}});
+              
+                  data1.value1='99';
+                  await data1.save();
+    
+                },2000)
+              }
+              else{
           
             data.value1=dataArray1[4]
             await data.save();
@@ -149,21 +249,6 @@ SerialPort.list().then(ports => {
 
             },2000)
           }
-          else  if(dataArray1[4] =='6')
-          {
-            console.log("Play Video 6");
-           
-            const data=await serials.findOne({where:{id:1}});
-          
-            data.value1=dataArray1[4]
-            await data.save();
-            setTimeout(async()=>{
-              const data1=await serials.findOne({where:{id:1}});
-          
-              data1.value1='99';
-              await data1.save();
-
-            },2000)
           }
 
 
