@@ -4,7 +4,7 @@ var db=require('./models/index');
 var path = require('path');
 const router=require('./routes/serialPort.js')
 // var https = require('https');
-require ('./database.js');
+// require ('./database.js');
 require ('./index.js');
 
 var cors=require('cors');
@@ -24,10 +24,10 @@ app.use(express.json());
 
 app.use(express.urlencoded({ extended: false }));
 // app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
-  (async () => {
-    await db.sequelize.sync();
-  })();
+// app.use(express.static(path.join(__dirname, 'public')));
+//   (async () => {
+//     await db.sequelize.sync();
+//   })();
  
 
   app.use('/SerialPort', router);

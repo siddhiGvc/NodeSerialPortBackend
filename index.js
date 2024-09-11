@@ -26,7 +26,7 @@ var temp;
 var StartCapture;
 const serialPorts=[];
 
-const Value='99';
+var Value='99';
 // List serial ports
 
 SerialPort.list().then(ports => {
