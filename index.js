@@ -25,6 +25,8 @@ var parser;
 var temp;
 var StartCapture;
 const serialPorts=[];
+
+const Value='99';
 // List serial ports
 
 SerialPort.list().then(ports => {
@@ -71,184 +73,69 @@ SerialPort.list().then(ports => {
           if(dataArray1[4] =="1")
           {
             console.log("Play Video 1");
-            const data=await serials.findOne({where:{id:1}});
-            if(!data)
-            {
-              await serials.create({
-                value1:dataArray1[4]
-              })
-              setTimeout(async()=>{
-                const data1=await serials.findOne({where:{id:1}});
-            
-                data1.value1='99';
-                await data1.save();
-  
-              },2000)
-            }
-            else{
-            data.value1=dataArray1[4];
-            await data.save();
+            Value='1';
 
             setTimeout(async()=>{
-              const data1=await serials.findOne({where:{id:1}});
-          
-              data1.value1='99';
-              await data1.save();
-
+              Value='99';
             },2000)
-          }
+          
 
 
           }
           else  if(dataArray1[4] =='2')
           {
             console.log("Play Video 2");
-            const data=await serials.findOne({where:{id:1}});
-            if(!data)
-              {
-                await serials.create({
-                  value1:dataArray1[4]
-                })
-                setTimeout(async()=>{
-                  const data1=await serials.findOne({where:{id:1}});
-              
-                  data1.value1='99';
-                  await data1.save();
-    
-                },2000)
-              }
-              else{
-            data.value1=dataArray1[4]
-            await data.save();
-            setTimeout(async()=>{
-              const data1=await serials.findOne({where:{id:1}});
-          
-              data1.value1='99';
-              await data1.save();
+            Value='2';
 
+            setTimeout(async()=>{
+              Value='99';
             },2000)
-              }
+          
+            
           }
           else  if(dataArray1[4] =='3')
           {
             console.log("Play Video 3");
-           
-            const data=await serials.findOne({where:{id:1}});
-            if(!data)
-              {
-                await serials.create({
-                  value1:dataArray1[4]
-                })
-                setTimeout(async()=>{
-                  const data1=await serials.findOne({where:{id:1}});
-              
-                  data1.value1='99';
-                  await data1.save();
-    
-                },2000)
-              }
-              else{
-            data.value1=dataArray1[4]
-            await data.save();
-            setTimeout(async()=>{
-              const data1=await serials.findOne({where:{id:1}});
-          
-              data1.value1='99';
-              await data1.save();
+            Value='3';
 
+            setTimeout(async()=>{
+              Value='99';
             },2000)
-             }
+          
+           
           }
           else  if(dataArray1[4] =='4')
           {
             console.log("Play Video 4");
-           
-            const data=await serials.findOne({where:{id:1}});
-            if(!data)
-              {
-                await serials.create({
-                  value1:dataArray1[4]
-                })
-                setTimeout(async()=>{
-                  const data1=await serials.findOne({where:{id:1}});
-              
-                  data1.value1='99';
-                  await data1.save();
-    
-                },2000)
-              }
-              else{
-            data.value1=dataArray1[4]
-            await data.save();
-            setTimeout(async()=>{
-              const data1=await serials.findOne({where:{id:1}});
-          
-              data1.value1='99';
-              await data1.save();
+            Value='4';
 
+            setTimeout(async()=>{
+              Value='99';
             },2000)
-            }
+          
           }
           else  if(dataArray1[4] =='5')
           {
             console.log("Play Video 5");
            
-            const data=await serials.findOne({where:{id:1}});
-            if(!data)
-              {
-                await serials.create({
-                  value1:dataArray1[4]
-                })
-                setTimeout(async()=>{
-                  const data1=await serials.findOne({where:{id:1}});
-              
-                  data1.value1='99';
-                  await data1.save();
-    
-                },2000)
-              }
-             else{
-            data.value1=dataArray1[4]
-            await data.save();
-            setTimeout(async()=>{
-              const data1=await serials.findOne({where:{id:1}});
-          
-              data1.value1='99';
-              await data1.save();
+            Value='5';
 
+            setTimeout(async()=>{
+              Value='99';
             },2000)
-          }
+          
           }
           else  if(dataArray1[4] =='6')
           {
             console.log("Play Video 6");
-           
-            const data=await serials.findOne({where:{id:1}});
-            if(!data)
-              {
-                await serials.create({
-                  value1:dataArray1[4]
-                })
-                setTimeout(async()=>{
-                  const data1=await serials.findOne({where:{id:1}});
-              
-                  data1.value1='99';
-                  await data1.save();
-    
-                },2000)
-              }
-              else{
-          
-            data.value1=dataArray1[4]
-            await data.save();
-            setTimeout(async()=>{
-              const data1=await serials.findOne({where:{id:1}});
-          
-              data1.value1='99';
-              await data1.save();
+            Value='6';
 
+            setTimeout(async()=>{
+              Value='99';
             },2000)
-          }
+          
+           
+          
           }
 
 
@@ -271,6 +158,31 @@ SerialPort.list().then(ports => {
 }).catch(err => {
   console.error('Error listing serial ports:', err);
 });
+
+
+
+const getSerialPorts=async(req,res)=>{
+  try{
+  
+    
+          const Data={
+              value1:Value
+          }
+      res.status(200).json({data:Data})
+      
+
+     
+
+  }
+  catch(err)
+  {
+      console.log(err);
+      res.status(505).json({status:505})
+  }
+
+}
+
+module.exports=getSerialPorts;
 
 
 

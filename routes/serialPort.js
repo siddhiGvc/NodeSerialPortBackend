@@ -1,6 +1,6 @@
 const express=require("express");
 
-const getSerialPorts =require('../controllers/serialPort')
+const getSerialPorts =require('../index')
 const router = express.Router();
 
 

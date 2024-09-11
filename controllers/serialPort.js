@@ -7,7 +7,10 @@ const getSerialPorts=async(req,res)=>{
         const obj = await SerialPort.findOne({where:{id:1}});
         if(obj)
         {
-        res.status(200).json({data:obj})
+            const Data={
+                value1:dataArray1[4]
+            }
+        res.status(200).json({data:Data})
         }
         else{
         const Data={
