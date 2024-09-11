@@ -9,10 +9,12 @@ const getSerialPorts=async(req,res)=>{
         {
         res.status(200).json({data:obj})
         }
+        else{
         const Data={
             value1:'99'
         }
         res.status(200).json({data:Data});
+       }
   
     }
     catch(err)
