@@ -4,9 +4,15 @@ const {SerialPort} =require("../models")
 const getSerialPorts=async(req,res)=>{
     try{
     
-        const obj = await SerialPort.findAll();
-       
-        res.status(200).json({data:obj[0]})
+        const obj = await SerialPort.findOne({where:{id:1}});
+        if(obj)
+        {
+        res.status(200).json({data:obj})
+        }
+        const Data={
+            value1:'99'
+        }
+        res.status(200).json({data:Data});
   
     }
     catch(err)
